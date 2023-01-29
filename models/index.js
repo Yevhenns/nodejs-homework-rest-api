@@ -1,13 +1,3 @@
-const getAll = require("./getAll");
-const getById = require("./getById");
-const remove = require("./remove");
-const add = require("./add");
-const update = require("./update");
+const { Contact } = require("./contact");
 
-module.exports = {
-  getAll,
-  getById,
-  remove,
-  add,
-  update,
-};
+module.exports = { Contact };
