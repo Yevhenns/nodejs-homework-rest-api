@@ -7,8 +7,8 @@ const { SECRET_KEY } = process.env;
 const login = async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email });
-  if (!user) {
-    const error = new Error("Not authorized, email is wrong");
+  if (!user || !user.verify) {
+    const error = new Error("Not authorized, email is wrong or not verified");
     error.status = 401;
     throw error;
   }
